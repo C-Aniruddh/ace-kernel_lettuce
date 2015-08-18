@@ -160,6 +160,12 @@ config CPU_FREQ_DEFAULT_GOV_HYPER
 	  you to get a full dynamic cpu frequency capable system by simply
 	  loading your cpufreq low-level hardware driver, using the
 	  'hyper' governor for latency-sensitive workloads.
+	  
+config CPU_FREQ_DEFAULT_GOV_PEGASUSQ
+	bool "pegasusq"
+	select CPU_FREQ_GOV_PEGASUSQ
+    help
+	Use the CPUFreq governor 'pegasusq' as default.
 
 config CPU_FREQ_DEFAULT_GOV_BLU_ACTIVE
 	bool "blu_active"
@@ -318,6 +324,9 @@ config CPU_FREQ_GOV_HYPER
 	  'hyper' - A tweaked "ondemand" based smart and smooth optimized governor!
 	
 	   If in doubt, say N.
+	   
+config CPU_FREQ_GOV_PEGASUSQ
+	tristate "'pegasusq' cpufreq policy governor"
 
 config CPU_FREQ_GOV_YANKACTIVE
 	tristate "'yankactive' cpufreq policy governor"
